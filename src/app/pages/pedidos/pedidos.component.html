@@ -1,0 +1,120 @@
+<section class="pedidos-page">
+  <div class="container">
+    <div class="page-header">
+      <h1><i class="fas fa-clipboard-list"></i> MEUS PEDIDOS</h1>
+      <p>Acompanhe e gerencie seus pedidos</p>
+    </div>
+
+    <mat-tab-group [(selectedIndex)]="selectedTab" class="orders-tabs">
+      <mat-tab label="Todos os Pedidos">
+        <div class="orders-list">
+          @for (order of orders; track order.id) {
+            <mat-card class="order-card">
+              <div class="order-header">
+                <div class="order-id">
+                  <strong>{{ order.id }}</strong>
+                  <mat-chip [style.background-color]="getStatusColor(order.status)" class="status-chip">
+                    {{ getStatusLabel(order.status) }}
+                  </mat-chip>
+                </div>
+                <div class="order-date">
+                  <mat-icon>calendar_today</mat-icon>
+                  {{ order.date | date:'dd/MM/yyyy' }}
+                </div>
+              </div>
+
+              <div class="order-items">
+                @for (item of order.items; track item.name) {
+                  <div class="item-row">
+                    <span>{{ item.quantity }}x {{ item.name }}</span>
+                    <span>R$ {{ item.price | number:'1.2-2' }}</span>
+                  </div>
+                }
+              </div>
+
+              <mat-divider></mat-divider>
+
+              <div class="order-footer">
+                <div class="order-type">
+                  <mat-icon>{{ order.deliveryType === 'delivery' ? 'local_shipping' : 'store' }}</mat-icon>
+                  <span>{{ order.deliveryType === 'delivery' ? 'Entrega' : 'Retirada no local' }}</span>
+                </div>
+                <div class="order-total">
+                  <span>Total:</span>
+                  <strong>R$ {{ order.total | number:'1.2-2' }}</strong>
+                </div>
+              </div>
+
+              <div class="order-actions">
+                <button mat-stroked-button (click)="trackOrder(order.id)">
+                  <mat-icon>local_shipping</mat-icon> Rastrear
+                </button>
+                <button mat-stroked-button color="primary">
+                  <mat-icon>replay</mat-icon> Comprar Novamente
+                </button>
+              </div>
+            </mat-card>
+          }
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Em Andamento">
+        <div class="empty-state">
+          <mat-icon>hourglass_empty</mat-icon>
+          <h3>Nenhum pedido em andamento</h3>
+          <p>Faça um novo pedido para acompanhar aqui</p>
+          <a routerLink="/promocoes" mat-raised-button color="primary">
+            Ver Promoções
+          </a>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Finalizados">
+        <div class="orders-list">
+          @for (order of orders; track order.id) {
+            <mat-card class="order-card completed">
+              <div class="order-header">
+                <div class="order-id">
+                  <strong>{{ order.id }}</strong>
+                  <mat-chip class="status-chip completed-chip">
+                    Entregue
+                  </mat-chip>
+                </div>
+                <div class="order-date">
+                  <mat-icon>calendar_today</mat-icon>
+                  {{ order.date | date:'dd/MM/yyyy' }}
+                </div>
+              </div>
+
+              <div class="order-items">
+                @for (item of order.items; track item.name) {
+                  <div class="item-row">
+                    <span>{{ item.quantity }}x {{ item.name }}</span>
+                    <span>R$ {{ item.price | number:'1.2-2' }}</span>
+                  </div>
+                }
+              </div>
+
+              <div class="order-footer">
+                <div class="order-type">
+                  <mat-icon>{{ order.deliveryType === 'delivery' ? 'local_shipping' : 'store' }}</mat-icon>
+                  <span>{{ order.deliveryType === 'delivery' ? 'Entrega' : 'Retirada no local' }}</span>
+                </div>
+                <div class="order-total">
+                  <span>Total:</span>
+                  <strong>R$ {{ order.total | number:'1.2-2' }}</strong>
+                </div>
+              </div>
+
+              <div class="order-actions">
+                <button mat-stroked-button color="primary">
+                  <mat-icon>replay</mat-icon> Comprar Novamente
+                </button>
+              </div>
+            </mat-card>
+          }
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</section>
