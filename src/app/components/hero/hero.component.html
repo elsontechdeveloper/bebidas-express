@@ -1,0 +1,40 @@
+<section 
+  class="hero" 
+  [style.background]="currentSlideData.background"
+  (mouseenter)="pauseAutoPlay()"
+  (mouseleave)="resumeAutoPlay()">
+  <div class="container">
+    <div class="hero-slider">
+      @for (slide of slides; track slide.title; let i = $index) {
+        <div class="hero-slide" [class.active]="currentSlide === i">
+          <div class="hero-content">
+            <h1>{{ slide.title }} <span class="highlight">{{ slide.highlight }}</span></h1>
+            <p>{{ slide.subtitle }}</p>
+            <button class="btn-primary">VER PROMOÇÕES <i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div class="hero-badges">
+            <div class="badge-circle">
+              <i class="fas fa-{{ slide.badge.icon }}"></i>
+              <span>{{ slide.badge.text }}<br><strong>{{ slide.badge.discount }}</strong></span>
+            </div>
+          </div>
+        </div>
+      }
+      
+      <div class="slider-controls">
+        <button class="slider-btn prev" (click)="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next" (click)="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      
+      <div class="slider-dots">
+        @for (slide of slides; track slide.title; let i = $index) {
+          <button 
+            class="dot" 
+            [class.active]="currentSlide === i"
+            (click)="goToSlide(i)">
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+</section>

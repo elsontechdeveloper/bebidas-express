@@ -1,0 +1,55 @@
+@if (variant === 'promo') {
+  <div class="product-card promo-card" [class.flash-sale]="product.isFlashSale">
+    @if (product.isFlashSale) {
+      <div class="flash-badge"><i class="fas fa-bolt"></i> FLASH SALE</div>
+    }
+    @if (product.discount) {
+      <span class="discount-badge">-{{ product.discount }}%</span>
+    }
+    
+    <div class="product-image">
+      <img [src]="product.image" [alt]="product.name">
+    </div>
+    
+    <div class="product-info">
+      <h4>{{ product.name }}</h4>
+      @if (product.promoEnds) {
+        <div class="promo-timer">
+          <i class="fas fa-clock"></i>
+          <span>Até {{ product.promoEnds | date:'dd/MM' }}</span>
+        </div>
+      }
+      <div class="price-box">
+        <span class="current-price">R$ {{ product.price | number:'1.2-2' }}</span>
+        @if (product.originalPrice) {
+          <span class="original-price">R$ {{ product.originalPrice | number:'1.2-2' }}</span>
+          @if (product.originalPrice && product.price) {
+            <span class="save-badge">Economize R$ {{ (product.originalPrice - product.price) | number:'1.2-2' }}</span>
+          }
+        }
+      </div>
+      <button class="btn-add-cart" (click)="onAddToCart()">
+        <i class="fas fa-cart-plus"></i> ADICIONAR
+      </button>
+    </div>
+  </div>
+} @else {
+  <div class="product-card">
+    @if (product.discount) {
+      <span class="discount-badge">-{{ product.discount }}%</span>
+    }
+    <div class="product-image">
+      <img [src]="product.image" [alt]="product.name">
+    </div>
+    <h4>{{ product.name }}</h4>
+    <div class="product-price">
+      <span class="current">R$ {{ product.price | number:'1.2-2' }}</span>
+      @if (product.originalPrice) {
+        <span class="old">R$ {{ product.originalPrice | number:'1.2-2' }}</span>
+      }
+    </div>
+    <button class="btn-add-cart" (click)="onAddToCart()">
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+}

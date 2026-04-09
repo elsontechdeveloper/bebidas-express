@@ -1,0 +1,44 @@
+.top-bar {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding: 8px 0;
+  font-size: 12px;
+
+  .top-bar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .top-bar-left,
+  .top-bar-right {
+    display: flex;
+    gap: 20px;
+  }
+
+  .top-bar-left span,
+  .top-bar-right span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .top-bar-left span i,
+  .top-bar-right span i {
+    color: #FFC107;
+  }
+}
+
+@media (max-width: 600px) {
+  .top-bar .top-bar-content {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .top-bar .top-bar-left {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+}

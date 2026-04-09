@@ -1,0 +1,48 @@
+<div class="promo-header">
+  <div class="promo-title">
+    <h1><i class="fas fa-fire"></i> PROMOÇÕES</h1>
+    <p>Economize até <strong>40%</strong> em produtos selecionados</p>
+  </div>
+  <div class="promo-stats">
+    <div class="stat-item">
+      <span class="stat-number">{{ productCount }}</span>
+      <span class="stat-label">Produtos</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">{{ totalSavings | number:'1.2-2' }}</span>
+      <span class="stat-label">Total economy</span>
+    </div>
+  </div>
+</div>
+
+<div class="promo-controls">
+  <div class="search-wrapper">
+    <app-search-input
+      placeholder="Buscar produto..."
+      (searchChange)="onSearchChange($event)">
+    </app-search-input>
+  </div>
+  
+  <div class="sort-box">
+    <mat-form-field appearance="outline">
+      <mat-label>Ordenar</mat-label>
+      <mat-select [ngModel]="sortBy()" (ngModelChange)="onSortChange($event)">
+        <mat-option *ngFor="let opt of sortOptions" [value]="opt.value">
+          {{ opt.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="categories-filter">
+  @for (cat of categories; track cat.id) {
+    <button 
+      class="category-btn"
+      [class.active]="selectedCategory() === cat.id"
+      (click)="onCategoryClick(cat.id)">
+      <i class="fas {{ cat.icon }}"></i>
+      {{ cat.name }}
+    </button>
+  }
+</div>

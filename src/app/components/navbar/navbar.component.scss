@@ -1,0 +1,56 @@
+.navbar {
+  background-color: #1a1a1a;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 0;
+
+    li {
+      a, .menu-trigger {
+        color: #ffffff;
+        text-decoration: none;
+        padding: 15px 20px;
+        display: block;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        &:hover,
+        &.active {
+          color: #FFC107;
+        }
+
+        mat-icon {
+          margin-left: 5px;
+          font-size: 18px;
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      .menu-trigger {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .nav-menu {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    li {
+      a, .menu-trigger {
+        white-space: nowrap;
+        padding: 12px 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.promo-page {
+  padding: 30px 0;
+  background-color: #f5f5f5;
+  min-height: calc(100vh - 200px);
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 60px 20px;
+
+    i {
+      font-size: 60px;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #666;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .promo-page {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .promo-page .products-grid {
+    grid-template-columns: 1fr;
+  }
+}

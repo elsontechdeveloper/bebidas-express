@@ -1,0 +1,223 @@
+.product-card {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
+
+  .discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #CC0000;
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .product-image {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+
+    img {
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  h4 {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 10px;
+    min-height: 40px;
+  }
+
+  .product-price {
+    margin-bottom: 15px;
+
+    .current {
+      display: block;
+      font-size: 20px;
+      font-weight: 700;
+      color: #333333;
+    }
+
+    .old {
+      font-size: 14px;
+      color: #666666;
+      text-decoration: line-through;
+    }
+  }
+
+  .btn-add-cart {
+    width: 40px;
+    height: 40px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #FFC107;
+      color: #1a1a1a;
+    }
+  }
+
+  // Promo variant
+  &.promo-card {
+    border: 1px solid #eee;
+    padding: 15px;
+
+    &.flash-sale {
+      border: 2px solid #FF6B00;
+      animation: pulse-border 2s infinite;
+    }
+
+    .flash-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: linear-gradient(135deg, #FF6B00, #FF8C00);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      z-index: 2;
+    }
+
+    .product-image {
+      height: 150px;
+    }
+
+    .product-info {
+      h4 {
+        font-size: 14px;
+        min-height: 35px;
+        margin-bottom: 8px;
+      }
+
+      .promo-timer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        font-size: 12px;
+        color: #FF6B00;
+        margin-bottom: 10px;
+
+        i {
+          font-size: 14px;
+        }
+      }
+
+      .price-box {
+        margin-bottom: 12px;
+
+        .current-price {
+          display: block;
+          font-size: 22px;
+          font-weight: 900;
+          color: #333;
+        }
+
+        .original-price {
+          display: block;
+          font-size: 13px;
+          color: #999;
+          text-decoration: line-through;
+        }
+
+        .save-badge {
+          display: inline-block;
+          background: #e8f5e9;
+          color: #2e7d32;
+          padding: 3px 10px;
+          border-radius: 15px;
+          font-size: 11px;
+          font-weight: 600;
+          margin-top: 5px;
+        }
+      }
+
+      .btn-add-cart {
+        width: 100%;
+        padding: 10px;
+        background: #1a1a1a;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        &:hover {
+          background: #FFC107;
+          color: #1a1a1a;
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    border-color: #FF6B00;
+  }
+  50% {
+    border-color: #FFC107;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    padding: 12px;
+
+    .product-image {
+      height: 100px;
+    }
+
+    h4 {
+      font-size: 12px;
+      min-height: 32px;
+    }
+
+    .product-price .current {
+      font-size: 16px;
+    }
+
+    &.promo-card {
+      .product-image {
+        height: 80px;
+      }
+
+      .product-info {
+        .price-box .current-price {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

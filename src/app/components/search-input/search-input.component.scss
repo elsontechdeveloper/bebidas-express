@@ -1,0 +1,119 @@
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+
+  .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px 15px 8px 45px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    outline: none;
+    height: 36px;
+    box-sizing: border-box;
+
+    &:focus {
+      border-color: #FFC107;
+    }
+
+    &::placeholder {
+      color: #999;
+    }
+  }
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 1000;
+
+  .search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:hover {
+      background: #f9f9f9;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .result-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      .result-name {
+        font-size: 14px;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .result-price {
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+      }
+    }
+
+    .result-discount {
+      background: #CC0000;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+  }
+
+  .no-results {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    mat-icon {
+      font-size: 40px;
+      width: 40px;
+      height: 40px;
+      color: #ddd;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<nav class="navbar">
+  <div class="container">
+    <ul class="nav-menu">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Início</a></li>
+      <li>
+        <button mat-button [matMenuTriggerFor]="bebidasMenu" class="menu-trigger">
+          Bebidas <mat-icon>expand_more</mat-icon>
+        </button>
+        <mat-menu #bebidasMenu="matMenu">
+          <a mat-menu-item routerLink="/promocoes"><mat-icon>local_offer</mat-icon> Promoções</a>
+          <a mat-menu-item routerLink="/combos"><mat-icon>inventory_2</mat-icon> Combos</a>
+          <a mat-menu-item routerLink="/gelo-carvao"><mat-icon>ac_unit</mat-icon> Gelo e Carvão</a>
+        </mat-menu>
+      </li>
+      <li><a routerLink="/promocoes" routerLinkActive="active">Promoções</a></li>
+      <li><a routerLink="/combos" routerLinkActive="active">Combos</a></li>
+      <li><a routerLink="/gelo-carvao" routerLinkActive="active">Gelo e Carvão</a></li>
+      <li><a routerLink="/sobre" routerLinkActive="active">Sobre nós</a></li>
+      <li><a routerLink="/contato" routerLinkActive="active">Contato</a></li>
+    </ul>
+  </div>
+</nav>

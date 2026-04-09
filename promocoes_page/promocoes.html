@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promoções - Bebidas Express</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar__content">
+      <span>📍 Retirada no local com desconto</span>
+      <span>🕘 Segunda a Domingo: 08h às 23h</span>
+      <span>🚚 Entregamos rápido para toda a região</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header__main">
+      <a href="#" class="brand">
+        <span class="brand__icon">🍾</span>
+        <span class="brand__text"><strong>BEBIDAS</strong> EXPRESS</span>
+      </a>
+
+      <form class="searchbar">
+        <input type="text" placeholder="Buscar promoções, bebidas, combos..." />
+        <button type="button">🔎</button>
+      </form>
+
+      <nav class="header__actions">
+        <a href="#">Entrar</a>
+        <a href="#">Meus pedidos</a>
+        <a href="#" class="cart">Carrinho <span>3</span></a>
+      </nav>
+    </div>
+
+    <div class="nav-wrap">
+      <div class="container">
+        <nav class="nav">
+          <a href="#">Início</a>
+          <a href="#">Bebidas</a>
+          <a href="#" class="is-active">Promoções</a>
+          <a href="#">Combos</a>
+          <a href="#">Gelo e Carvão</a>
+          <a href="#">Sobre nós</a>
+          <a href="#">Contato</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="promocoes-page">
+    <div class="container">
+      <section class="hero">
+        <div class="hero__content">
+          <span class="eyebrow">Ofertas da semana</span>
+          <h1>AS MELHORES <span>PROMOÇÕES</span></h1>
+          <p>
+            Descontos especiais em bebidas, gelo e carvão para você
+            aproveitar mais pagando menos.
+          </p>
+          <div class="hero__actions">
+            <a href="#ofertas" class="btn btn--primary">Ver todas as ofertas</a>
+            <a href="#combos" class="btn btn--ghost">Ver combos</a>
+          </div>
+        </div>
+
+        <div class="hero__badge">
+          <strong>OFERTAS</strong>
+          <span>por tempo limitado</span>
+        </div>
+
+        <div class="hero__bottles" aria-hidden="true">
+          <div class="bottle bottle--green"></div>
+          <div class="bottle bottle--amber"></div>
+          <div class="bottle bottle--light"></div>
+        </div>
+      </section>
+
+      <section class="benefits">
+        <article class="benefit-card">
+          <div class="benefit-card__icon">🏷️</div>
+          <div>
+            <h3>Descontos exclusivos</h3>
+            <p>Ofertas que cabem no seu bolso.</p>
+          </div>
+        </article>
+        <article class="benefit-card">
+          <div class="benefit-card__icon">🔥</div>
+          <div>
+            <h3>Tempo limitado</h3>
+            <p>Corra e aproveite antes que acabe.</p>
+          </div>
+        </article>
+        <article class="benefit-card">
+          <div class="benefit-card__icon">🎁</div>
+          <div>
+            <h3>Combos especiais</h3>
+            <p>Mais produtos com melhor economia.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="filters">
+        <button class="chip chip--active">Todas</button>
+        <button class="chip">Cervejas</button>
+        <button class="chip">Destilados</button>
+        <button class="chip">Energéticos</button>
+        <button class="chip">Água</button>
+        <button class="chip">Gelo</button>
+        <button class="chip">Carvão</button>
+      </section>
+
+      <section class="offers" id="ofertas">
+        <div class="section-head">
+          <div>
+            <span class="section-head__eyebrow">🔥 Promoções em destaque</span>
+            <h2>Ofertas para vender rápido</h2>
+          </div>
+          <a href="#">Ver todas as promoções</a>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <span class="discount">-10%</span>
+            <div class="product-card__thumb beer-thumb beer-thumb--gold"></div>
+            <h3>Skol Pilsen 600ml</h3>
+            <div class="price-row"><strong>R$ 5,49</strong><s>R$ 6,10</s></div>
+            <button>+</button>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-16%</span>
+            <div class="product-card__thumb beer-thumb beer-thumb--green"></div>
+            <h3>Heineken 600ml</h3>
+            <div class="price-row"><strong>R$ 7,99</strong><s>R$ 9,50</s></div>
+            <button>+</button>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-8%</span>
+            <div class="product-card__thumb beer-thumb beer-thumb--silver"></div>
+            <h3>Stella Artois 600ml</h3>
+            <div class="price-row"><strong>R$ 7,49</strong><s>R$ 8,10</s></div>
+            <button>+</button>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-14%</span>
+            <div class="product-card__thumb can-thumb"></div>
+            <h3>Red Bull 250ml</h3>
+            <div class="price-row"><strong>R$ 8,99</strong><s>R$ 10,50</s></div>
+            <button>+</button>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-25%</span>
+            <div class="product-card__thumb water-thumb"></div>
+            <h3>Água Mineral 500ml</h3>
+            <div class="price-row"><strong>R$ 1,50</strong><s>R$ 2,00</s></div>
+            <button>+</button>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-15%</span>
+            <div class="product-card__thumb coal-thumb"></div>
+            <h3>Carvão 5kg</h3>
+            <div class="price-row"><strong>R$ 16,90</strong><s>R$ 20,00</s></div>
+            <button>+</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="promo-banners" id="combos">
+        <img src="assets/combo-churrasco.png" alt="Banner combo churrasco" />
+        <img src="assets/sexta-da-brahma.png" alt="Banner sexta da brahma" />
+        <img src="assets/gelo-transparente.png" alt="Banner gelo transparente" />
+      </section>
+
+      <section class="how-it-works">
+        <article>
+          <span>1</span>
+          <div>
+            <h3>Escolha</h3>
+            <p>Navegue e adicione ao carrinho.</p>
+          </div>
+        </article>
+        <article>
+          <span>2</span>
+          <div>
+            <h3>Confirme</h3>
+            <p>Revise seu pedido com calma.</p>
+          </div>
+        </article>
+        <article>
+          <span>3</span>
+          <div>
+            <h3>Peça no WhatsApp</h3>
+            <p>Finalize de forma rápida e prática.</p>
+          </div>
+        </article>
+        <article>
+          <span>4</span>
+          <div>
+            <h3>Retire ou receba</h3>
+            <p>Retirada com desconto ou entrega rápida.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="cta-whatsapp">
+        <div>
+          <span class="cta-whatsapp__tag">📲 Grupo VIP</span>
+          <h2>Receba ofertas exclusivas no WhatsApp</h2>
+          <p>Entre para o grupo e fique sabendo das promoções antes de todo mundo.</p>
+        </div>
+        <a href="#" class="btn btn--dark">Quero participar</a>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

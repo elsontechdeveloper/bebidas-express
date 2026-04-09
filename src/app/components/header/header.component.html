@@ -1,0 +1,47 @@
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <a routerLink="/" class="logo">
+        <img src="./assets/imaages/elson-bebida-logo.png" alt="Elson Bebidas" class="logo-img">
+      </a>
+
+      <div class="header-search">
+        <app-search-input
+          placeholder="Buscar bebidas, marcas..."
+          [results]="searchResults()"
+          [showResults]="showResults()"
+          (searchChange)="onSearch($event)"
+          (resultSelect)="onResultSelect($event)">
+        </app-search-input>
+      </div>
+
+      <div class="header-actions">
+        @if (authService.isLoggedIn()) {
+          <button mat-button [matMenuTriggerFor]="userMenu" class="action-btn user-btn">
+            <i class="fas fa-user-circle"></i>
+            <span>{{ authService.currentUser()?.name }}</span>
+          </button>
+          <mat-menu #userMenu="matMenu">
+            <button mat-menu-item routerLink="/pedidos">
+              <mat-icon>receipt_long</mat-icon>
+              <span>Meus Pedidos</span>
+            </button>
+            <button mat-menu-item (click)="logout()">
+              <mat-icon>logout</mat-icon>
+              <span>Sair</span>
+            </button>
+          </mat-menu>
+        } @else {
+          <a routerLink="/login" class="action-btn">
+            <i class="far fa-user"></i>
+            <span>Entrar</span>
+          </a>
+        }
+        <a routerLink="/carrinho" class="action-btn cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="badge">{{ cartService.cartCount() }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

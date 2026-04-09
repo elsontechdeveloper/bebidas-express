@@ -1,0 +1,36 @@
+<div class="search-wrapper">
+  <div class="search-box">
+    <i class="fas fa-search search-icon"></i>
+    <input 
+      type="text" 
+      [placeholder]="placeholder"
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()">
+  </div>
+  
+  @if (showResults && results.length > 0) {
+    <div class="search-results">
+      @for (item of results; track item.id) {
+        <div class="search-result-item" (click)="onSelect(item)">
+          <img [src]="item.image" [alt]="item.name">
+          <div class="result-info">
+            <span class="result-name">{{ item.name }}</span>
+            <span class="result-price">R$ {{ item.price | number:'1.2-2' }}</span>
+          </div>
+          @if (item.discount) {
+            <span class="result-discount">-{{ item.discount }}%</span>
+          }
+        </div>
+      }
+    </div>
+  }
+  
+  @if (showResults && results.length === 0 && searchTerm.length >= 2) {
+    <div class="search-results">
+      <div class="no-results">
+        <mat-icon>search_off</mat-icon>
+        <span>Nenhum resultado encontrado</span>
+      </div>
+    </div>
+  }
+</div>

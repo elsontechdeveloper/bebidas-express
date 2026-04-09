@@ -1,0 +1,10 @@
+<div class="toast-container" [class]="position">
+  @for (toast of toastService.toasts(); track toast.id) {
+    @if (toast.position === position) {
+      <div class="toast" [class]="toast.type">
+        <mat-icon>{{ getIcon(toast.type) }}</mat-icon>
+        <span>{{ toast.message }}</span>
+      </div>
+    }
+  }
+</div>
