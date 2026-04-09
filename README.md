@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # bebidas-express
 Loja de bebidas pra retirada no local ou delivery
 =======
+=======
+>>>>>>> ece248b199257380657424909dac9b60bd48e125
 # Bebidas Express - Landing Page
 
 ## Como usar:
@@ -35,5 +38,9 @@ Basta abrir o arquivo `index.html` no seu navegador.
 - index.html - Estrutura HTML
 - scss/styles.scss - Arquivo SCSS com variáveis, mixins e estilos
 - css/styles.css - CSS compilado (gerado automaticamente)
+<<<<<<< HEAD
 - js/main.js - JavaScript para interatividade
 >>>>>>> ece248b (feat: initial commit bebidas-express)
+=======
+- js/main.js - JavaScript para interatividade
+>>>>>>> ece248b199257380657424909dac9b60bd48e125
